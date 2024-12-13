@@ -29,6 +29,11 @@ public class CharacterMovement : MonoBehaviour
         animator.SetFloat("X", x * 1f); // X için -0.5 sola, 0.5 saða hareketi temsil ediyor
         animator.SetFloat("Y", Mathf.Abs(y*2)); // Y: 1 koþma, 0.5 yürüme, 0 durma olacak þekilde ayarlanýr
 
+        if (Input.GetMouseButtonDown(0))
+        {
+            animator.SetTrigger("b");
+        }
+
         // Karakterin hýzýný hesapla (yürüme veya koþma)
         float speed = (y > 0.5f) ? runSpeed : walkSpeed;
 
